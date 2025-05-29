@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+        <div class="loading-text">Loading Resources...</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- 隐藏的主页内容 -->
+    <div id="main-content" style="display:none;">
+        {{ include 'index.html' }}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+</body>
+</html>

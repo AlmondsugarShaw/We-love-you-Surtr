@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <link href="https://static.prts.wiki/mdi/7.2.96/css/materialdesignicons.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-3-y/font-awesome/5.15.4/css/all.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-3-y/font-awesome/5.15.4/css/v4-shims.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-3-y/animate.css/3.7.2/animate.min.css" type="text/css" rel="stylesheet" />
+    
+
+    
+    <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Story - Surtr</title>
+
+
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  .ui.divided.list .item .content .header {
+    font-size: 1.2em;
+    margin-top: 1em;     
+    margin-bottom: 1em;  
+    line-height: 1.5;    
+  }
+  #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+</style>
+  </style>
+</head>
+<body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}">
+        Surtr
+      </a>
+      <a href="/" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Pages <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/">Home Page</a>
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="ui grid" style="margin: 20px auto; max-width: 1200px;">
+    <div class="ui vertical menu">
+      <a class="active teal item" data-tab="section1">
+        【实装预告】
+      </a>
+      <a class="item" data-tab="section2">
+        【干员立绘】
+      </a>
+      <a class="item" data-tab="section3">
+        【干员档案】
+      </a>
+      <a class="item" data-tab="section4">
+        【干员模组】
+      </a>
+      <a class="item" data-tab="section5">
+        【语音记录】
+      </a>
+    </div>
+  <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+    <div class="ui active tab segment" data-tab="section1">
+      <div class="header" style="width: 80%; margin: 0 auto;" id="section1">【实装预告】</div>
+      <div class="meta">
+        <span class="right floated time" style="width: 80%; margin: 0 auto;">2020.9</span>
+        <span class="category" style="width: 80%; margin: 0 auto;">Arknights(Weibo)</span>
+      </div>
+      <div class="description">
+        <p>
+            [ 无拘熔火 ]</br>
+            //史尔特尔</br>
+            “我是史尔特尔，你就是他们说的博士吗。今后我会在罗德岛工作，希望你们不要让我觉得无聊。”</br>
+        </br>
+            ___________</br>
+            过往一片空白的萨卡兹少女。</br>
+            几乎无法使用源石技艺，身体素质也十分普通，但在战斗中却有着上佳表现，据测试干员反馈，其原因与随身携带的双手大剑有关。</br>
+            随心所欲，自由自在，终日独自一人游荡，没有人知道她在寻找什么，只知道她有一本记录册，上面标注着无数不明所以的地名，每到一个地方，便会自言自语，划去一条。</br>
+            她不会无故贬低别人，但交谈时的语气并不友善，和她沟通是一件较为困难的事，但带着冰淇淋去见她，情况或许会有转机？
+        </p>
+        <img class="ui image" src="{{ url_for('static', filename='images/surtr.png') }}">
+      </div>
+    </div>
+    <div class="ui tab segment" data-tab="section2">
+        <h2 class="ui header" id="section2">【干员立绘】</h2>
+        <img class="ui image" src="{{ url_for('static', filename='images/surtr_1.png') }}">
+          <p>
+            ///干员立绘1
+            干员平时最常穿着的服装。<br/>
+            虽然不一定比制服更实用，但是一定是干员最舒适的搭配之一。
+          </p>
+        <img class="ui image" src="{{ url_for('static', filename='images/surtr_2.png') }}">
+        <p>
+          ///干员立绘2</br>
+          晋升后，经过调整的服装。</br>
+          根据干员的经验，对服装细节进行改进，针对一些作战环境进行了特化处理。</br>
+          在满足战斗需求的同时，最大程度还原各位干员熟悉的舒适穿着体验。
+        </p>
+        <img class="ui image" src="{{ url_for('static', filename='images/it.png') }}">
+        <p>
+          ///干员时装1</br>
+          名称：自由//失效</br>
+          系列：i.t</br>
+          颜色：#d13421</br>
+          介绍：I.T旗下品牌UNDER GARDEN合作款服装/自由//失效。</br>
+          黑红基础配色，非整体设计，多种佩饰选择，整体效果呈现个性化偏向。
+        </p>
+        <img class="ui image" src="{{ url_for('static', filename='images/coral.png') }}">
+        <p>
+          ///干员时装2</br>
+          名称：缤纷奇境 CW03</br>
+          系列：珊瑚海岸/IX</br>
+          颜色：#34b2f5</br>
+          介绍：MARTHE [珊瑚海岸/CoralCoast]缤纷奇境系列泳衣03款。</br>
+          清凉舒适的基础剪裁与多样化的装饰性元素巧妙融合，是对夏天的独特阐释。
+        </p>
+    </div> 
+    <div class="ui tab segment" data-tab="section3"> 
+        <div class="header" style="width: 80%; margin: 0 auto;" id="section3">【干员档案】</div>
+        <div class="meta">
+          <span class="right floated time" style="width: 80%; margin: 0 auto;">2020.9</span>
+          <span class="category" style="width: 80%; margin: 0 auto;">Arknights</span>
+        </div>
+        <h2 class="ui header">基础档案</h2>
+        <p>
+            【 代 号 】史尔特尔</br>
+            【 性 别 】女</br>
+            【战斗经验】两年</br>
+            【出 身 地】 不明</br>
+            【 生 日 】1月22日</br>
+            【 种 族 】萨卡兹</br>
+            【 身 高 】162cm</br>
+            【矿石病感染情况】</br>
+            参照医学检测报告，确认为感染者。
+        </p>
+      
+
+        <h2 class="ui header">基本信息</h2>
+        <p>
+          【所属阵营】罗德岛</br>
+          【 位 置 】近战位</br>
+          【 标 签 】输出</br>
+          【 画 师 】Ask</br>
+          【中文配音】云鹤追</br>
+          【日文配音】堀江由衣</br>
+          【韩文配音】徐维梨</br>
+          【英文配音】Kira Buckland
+        </p>
+
+
+
+        <h2 class="ui header">综合体检测试</h2>
+        <p>
+          【 物 理 强 度 】普通</br>
+          【 战 场 机 动 】普通</br>
+          【 生 理 耐 受 】普通</br>
+          【 战 术 规 划 】优良</br>
+          【 战 斗 技 巧 】普通</br>
+          【源石技艺适应性】缺陷</br>
+        </p>
+
+
+        <h2 class="ui header">客观履历</h2>
+        <p>
+          神秘的萨卡兹少女史尔特尔，或因矿石病影响导致缺失性记忆障碍，其情况在矿石病病理中也极其少见，现于罗德岛接受治疗中。</br>
+          在测试过程中展现出了原因不详的强大战斗能力，很快成为了作战干员。
+        </p>
+
+
+        <h2 class="ui header">临床诊断信息</h2>
+        <p>
+          造影检测结果显示，该干员体内脏器轮廓模糊，可见较小阴影，循环系统内源石颗粒检测异常，有细微矿石病感染迹象，现阶段可确认为矿石病感染者。</br>
+        </br>
+        【体细胞与源石融合率】1%</br>
+        干员史尔特尔体表基本无感染特征。</br>
+        </br>
+        【血液源石结晶密度】0.10u/L</br>
+        干员史尔特尔的源石结晶密度偏低。
+        </p>
+
+
+        <h2 class="ui header">档案资料一</h2>
+        <p>
+          干员史尔特尔被发现于乌萨斯周边的一个遭到了天灾侵害的小镇废墟之中。</br>
+          当时罗德岛干员在当地执行灾后勘探任务，无意间碰到了看起来好像是遇难了的史尔特尔，当时她一个人呆在损毁的房屋中休息。</br>
+          干员们担心史尔特尔会受到后续灾害影响，选择将其带回了罗德岛。</br>
+          后来才知道，原来当时干员史尔特尔只是路过当地找了一个落脚处休息而已。
+        </p>
+
+
+        <h2 class="ui header">档案资料二</h2>
+        <p>
+          虽然史尔特尔作战强度远远超过了普通作战干员，但是其能力却并不属于任何一种源石技艺。</br>
+          利用随身携带的双手大剑，史尔特尔可以轻松破坏周遭环境。</br>
+          剑体引起的高温可以轻易融化一般物质，但是原理却难以解析。</br>
+          该大剑的来历史尔特尔本人也无法回忆，对于她来说，不知不觉这把剑就陪伴着她了。</br>
+          在此基础上，史尔特尔即使出入一般的感染区域，其感染程度也几乎不会扩大。</br>
+          这是否会成为矿石病研究的重要一环，我们尚不可知。
+        </p>
+
+
+        <h2 class="ui header">档案资料三</h2>
+        <p>
+          史尔特尔的记忆认知障碍并不同于普通的记忆缺失，而是一段时间的多重记忆混乱。</br>
+          按照史尔特尔的说法，她的脑中有大量不同记忆，在这些记忆中的史尔特尔自己拥有完全不同的人际关系，身处完全不同的地理位置。</br>
+          由于调查难度过高，无法辨别其真实性。</br>
+          不知道这些真的是史尔特尔亲身的体验，还是她把一些见闻当成是了自己的经历。
+        </p>
+
+
+        <h2 class="ui header">档案资料四</h2>
+        <p>
+          史尔特尔在罗德岛舰船上的生活较为自由，并不会按照一般干员的方式对其进行约束和要求。</br>
+          医疗部门了解了她的情况，整理部分史尔特尔的记忆列表，帮助其进行考察。</br>
+          大部分时间里史尔特尔会亲自去记忆所在地寻找相关的线索。</br>
+          很明显，史尔特尔穷尽一生可能也无法将其记忆中的所有地区寻找完毕，但是她本人看起来并不在意。</br>
+          可能比起结果，对史尔特尔来说这个过程更加重要。
+        </p>
+
+
+        <h2 class="ui header">晋升资料</h2>
+        <p>
+          【史尔特尔个人纪录的其中一页】</br>
+          【阅览无权限要求】</br>
+            树林里，无尽的树木，溪流，马车，强盗。</br>
+            高楼大厦，小巷子，蛋糕店，糖霜，蛋白。</br>
+            荒原，废墟，敌人，朋友，连环爆炸。</br>
+            雪山，什么都没有的雪山，只有连绵雪山。</br>
+            城堡，石制的城堡，塔楼，打不开的门。</br>
+            学校，街道，操场，书报亭，抢劫犯。</br>
+            派出所，审讯室，计时牌，犯人。</br>
+            气球，游乐园，喷泉，过山车。</br>
+            海，水怪，渔船。</br>
+            电塔，广播站，屋顶。</br>
+            ————</br>
+            有很多条都被划掉了。
+        </p>
+
+
+        <h2 class="ui header">招聘合同</h2>
+        <p>
+          罗德岛近卫干员史尔特尔，看上去很难接近。</br>
+          希望对博士是例外。
+        </p>
+
+        <h2 class="ui header">史尔特尔的信物</h2>
+        <p>
+          用于提升史尔特尔的潜能。</br>
+          一份填满地名的复印文档，其中小部分已被红笔划去。要是有空，你可以帮忙探查这些地点。
+        </p>
+
+
+    </div>
+    <div class="ui tab segment" data-tab="section4">
+        <div class="header" style="width: 80%; margin: 0 auto;" id="section4">【干员模组】</div>
+        <div class="meta">
+          <span class="right floated time" style="width: 80%; margin: 0 auto;">2020.9</span>
+          <span class="category" style="width: 80%; margin: 0 auto;">Arknights(Weibo)</span>
+        </div>
+        <div class="description">
+          <h2 class="ui header">史尔特尔证章</h2>
+          <p>
+              基础证章，无特殊效果</br>
+              干员史尔特尔擅长在近身搏斗中对敌人造成法术杀伤</br>
+              根据外勤部门决议</br>
+              在外勤任务中划分为近卫干员，行使术战者职责</br>
+              特别颁发此证章</br>
+              以兹证明
+          </p>
+          <img class="ui image" src="{{ url_for('static', filename='images/originalmodel.png') }}">
+        </div>
+        <div class="description">
+          <h2 class="ui header">萨米的不灭心脏碎片</h2>
+          <p>
+              “萨米庇佑着我们所有人。祂无处不在，时刻关注着每一个祂的子孙。</br>
+              “这雪原里的一草一木都是祂的分身，祂会通过它们来指引我们。即使我们身在他乡，萨米也能通过这些媒介来帮助我们渡过难关。</br>
+              “所以，我这个连大名鼎鼎的艾尔启都买过的萨米灵石工艺品挂饰，不来一份吗？”——某学不会教训的萨米商贩</br>
+              史尔特尔准备离开雪原深处、风雪的中心时，萨米给了她一件礼物。</br>
+              显现出密文的冰层逐渐融化，崩裂，一小块冰晶滚落在了史尔特尔的脚边。</br>
+              仿佛被人驱使着，史尔特尔将冰晶捡起，没想到它竟然不像看上去那样刺骨。风雪划过冰晶时，似乎带出了一些些不那么冰冷的律动，好像是生命的律动。</br>
+              这种感觉很熟悉，她看向手边的大剑，注视着剑中心的熔核。</br>
+              当冰晶靠近大剑时，史尔特尔能感觉到，另一个自己的烦躁感。她能感觉到，仿佛是在说“该死的，把这玩意儿拿开！别让我看见！”</br>
+              于是，史尔特尔特意买了个萨米本地的工艺品挂坠，丢掉了挂坠里的破烂石头，把冰晶放了进去，将其一圈一圈缠在了剑柄上。</br>
+              伴随着一步一步前进，挂坠和剑柄有节奏地撞击，叮叮作响。那个躁动的另一个自己又高傲又不满，想要抱怨却无能为力。</br>
+              史尔特尔不由得在心中嘲笑了一下另一个自己。</br>
+              她知道这个家伙暴躁，滚烫，讨厌凉的东西，这种讨厌就像是讨厌指甲划过黑板的声音一样。</br>
+              这也是她总喜欢吃冰淇淋或者其他冷饮的原因。</br>
+              叮叮，史尔特尔用挂饰敲敲剑，剑猛地震动了几下，又停了下来。冰晶蓝色的光照在剑身上，把剑上的火红色掩盖了不少。</br>
+              感谢萨米。</br>
+              她能感受到火焰变得愤怒，变得不能接受自己被轻视，仿佛是在说“你这个家伙，竟然故意找了这该死的玩意儿来对付我！”</br>
+              胡扯。</br>
+              就算没有萨米的帮助，史尔特尔也不会把这小小抱怨看作威胁。</br>
+              少女从来没有把火焰的能力看作祝福，也没有把记忆的混乱看作束缚。她任性又自我，无视一切她乐于无视的东西，珍惜一切她乐于珍惜的东西。</br>
+              管你是什么巨兽的碎片，给我闭嘴。
+          </p>
+          <img class="ui image" src="{{ url_for('static', filename='images/samisheartpieces.png') }}">
+        </div>
+    </div>
+    <div class="ui tab segment" data-tab="section5">
+    <h1 class="ui header" id="section5">【语音记录】</h1>
+<div class="ui middle aligned divided list">
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/任命助理.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">任命助理</div>
+      你连自己的分内之事都完成不了，需要我来帮忙？</br>
+      あんた、自分の仕事も全うできないからって、私に助けろっていうの？</br>
+      You couldn't even finish the work you're supposed to do, so you're asking me for help?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/交谈1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">交谈1</div>
+      不要让我去给其他人做法术指导了，我可没兴趣去跟一群普通人玩源石技艺游戏。</br>
+      他人の指導役はもうごめんだ。</br>
+      一般人たちと雁首揃えてアーツごっこするなんて興味ない。</br>
+      Stop sending me to teach people Originium Arts.</br>
+      I have no interest in wasting time with common people.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/交谈2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">交谈2</div>
+      我会在这里不是因为我需要在这里，只是因为我想而已。</br>
+      私がここに留まってるのは必要だからじゃない、そうしたいからだ。</br>
+      I'm not here because I have to be. Just because I want to be.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/交谈3.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">交谈3</div>
+      我最讨厌的就是不停问为什么的人，希望你不是。</br>
+      何でもすぐどうしてって聞く奴が一番ムカつく。</br>
+      あんたがそうじゃないことを願うよ。</br>
+      The people I hate most are the ones who ask too many questions. </br>
+      I hope you are not one of them.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/晋升后交谈1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">晋升后交谈1(提升至精英阶段1以查看)</div>
+      看来你已经对我的源石技艺有所了解了，希望你自己也清楚其危险性。</br>
+      私のアーツを少しは理解できたようだな。</br>
+      ならばその危うさも覚えておくといいよ。</br>
+      Looks like you understand my Arts now, to some degree.</br>
+      I hope you're aware of the danger as well.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/晋升后交谈2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">晋升后交谈2(提升至精英阶段2以查看)</div>
+      反应过来的时候，源石技艺和这把法杖已经伴随着我了。</br>
+      我一点都不记得什么时候得到了这样的能力，当然我也并不在意。</br>
+      気がつくと、アーツの力もこのアーツユニットも手の中にあった。</br>
+      この力を手に入れた時のことは全く覚えてないが、もちろんそんなこと気にしたこともない。</br>
+      Before I realized it, these Arts and this staff became my most loyal friends.</br>
+      I don't remember when I gained this power.</br>
+      And of course, I don't actually care.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/信赖提升后交谈1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">信赖提升后交谈1(提升信赖至40%以查看)</div>
+      我有着各种各样的记忆，我也不知道它们是怎么来的，我也不知道哪些是真正属于我的。</br>
+      为了找到记忆的来源，我一直在各个国家中来回旅行，而现在来到了罗德岛。</br>
+      私にはいろんな記憶がある。</br>
+      どうやってその記憶を宿したのか、どれが本物の自分の記憶なのか、全然わからない。</br>
+      その記憶の出どころを探し出すために国々を渡り歩いているが、今はロドスに落ち着いたところだ。</br>
+      I have all kinds of memories.</br>
+      I don't know where they came from, and I don't know which ones are really mine.</br>
+      I've been traveling back and forth, from country to country trying to find the source.</br>
+      And now, here I am at Rhodes Island.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/信赖提升后交谈2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">信赖提升后交谈2(提升信赖至100%以查看)</div>
+      没有什么比一份冰淇淋更能让我从混乱的记忆中冷静下来了，以前我还是一个人的时候多亏了它们。</br>
+      私を混乱する記憶の渦から救い出し落ち着かせてくれるのは、アイスクリームをおいて他にない。</br>
+      これまで一人だった頃は、いつも助けられていた。</br>
+      When I'm all caught up in chaotic memories, there's nothing better than an ice cream to calm me down.</br>
+      I relied a lot on ice cream, when I was alone.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/信赖提升后交谈3.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">信赖提升后交谈3(提升信赖至200%以查看)</div>
+      在罗德岛的记忆跟以前的那些完全不同，充满了真实感，第一次让我觉得自己就是自己。</br>
+      这一切也多亏了你和罗德岛的大家。</br>
+      ......</br>
+      干嘛，该感谢的时候我还是会感谢的好吧？</br>
+      ロドスでの記憶はこれまでと違ってすごくリアルな感じがして、自分が自分であることを初めて実感させてくれた。</br>
+      これも全部あんたやロドスのみんなのおかげだ。</br>
+      ……</br>
+      何よ、感謝すべきことは私もちゃんと言うから。</br>
+      The memories from after I came to Rhodes Island are completely different from the ones before.</br>
+      There's a sense of realism to them.</br>
+      For the first time, I feel like I'm really myself.</br>
+      That's all thanks to you, and the rest of Rhodes Island…</br>
+      What?</br>
+      I am capable of giving thanks where it's deserved, alright?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/闲置.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">闲置</div>
+      啧......浪费时间。</br>
+      チッ、時間の無駄。</br>
+      Hmph… what a waste of time.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/干员报到.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">干员报到</div>
+      我是史尔特尔，你就是他们说的博士吗。</br>
+      今后我会在罗德岛工作，希望你们不要让我觉得无聊。</br>
+      私はスルト、あんたが噂のドクター？</br>
+      これからはロドスで働かせてもらうことになってるから、退屈させないで。</br>
+      I am Surtr.</br>
+      Are you the Doctor they mentioned?</br>
+      I'll be working at Rhodes Island, starting today.</br>
+      I hope you won't bore me too much.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/观看作战记录.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">观看作战记录</div>
+      就这样？</br>
+      それだけ？</br>
+      That's it?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/精英化晋升1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">精英化晋升1(提升至精英阶段1以查看)</div>
+      见识过我的实力之后，开始重视我了？</br>
+      私の実力を見て、やっと大事にしようって思い始めたわけ？</br>
+      What?</br>
+      You're starting to value me now that you know my power?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/精英化晋升2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">精英化晋升2(提升至精英阶段2以查看)</div>
+      看重的不是这能力，而是我本身？</br>
+      既然你都这样说了，那我也拿出相应的努力来回报你吧。</br>
+      力ではなく私自身を評価してるから？</br>
+      そうか。</br>
+      そこまで言うなら、こちらも相応の努力で応えよう。</br>
+      So it's not my power, but me myself?</br>
+      Hmph, you leave me no choice but to pay it back with hard work.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/编入队伍.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">编入队伍</div>
+      需要我了吗。</br>
+      私が必要か。</br>
+      Am I needed?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/任命队长.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">任命队长</div>
+      我一个人就够了。</br>
+      私一人で十分だ。</br>
+      I alone am enough.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/行动出发.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">行动出发</div>
+      出发了。</br>
+      出発だ。</br>
+      Time to go.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/行动开始.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">行动开始</div>
+      要消灭的就是他们吗。</br>
+      奴らが今回の殲滅対象か。</br>
+      Are they the ones I'm eliminating?
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/选中干员1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">选中干员1</div>
+      不要对我指手画脚。</br>
+      私に指図するな。</br>
+      Don't order me around.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='app/static/media/选中干员2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">选中干员2</div>
+      不要多说，我知道。</br>
+      言われなくてもわかってる。</br>
+      Enough, I get it.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/部署1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">部署1</div>
+      不错的地方。</br>
+      悪くない場所だ。</br>
+      Not a bad position.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/部署2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">部署2</div>
+      我上了！</br>
+      行くよ！</br>
+      I'm on it!
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/作战中1.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">作战中1</div>
+      去死吧！</br>
+      死ね！</br>
+      Die!
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/作战中2.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">作战中2</div>
+      一个也别想逃走。</br>
+      一匹も逃げられると思うな！</br>
+      You can run but you can't hide!
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/作战中3.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">作战中3</div>
+      莱万汀！</br>
+      レーヴァテイン！</br>
+      Laevatain!
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/作战中4.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">作战中4</div>
+      愚蠢的家伙！</br>
+      愚か者！</br>
+      Foolish morons!
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/完成高难行动.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">完成高难行动</div>
+      哼，小菜一碟。</br>
+      ふんっ、話にならない。</br>
+      Hmph, Piece of cake.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/3星结束行动.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">三星结束行动</div>
+      理所当然。</br>
+      あったりまえだ。</br>
+      Naturally.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/非3星结束行动.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">非三星结束行动</div>
+      连这么简单的事情都做不好吗。</br>
+      こんな簡単なこともできないのか。</br>
+      Can you not even do such a simple thing?
+    </div>
+
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/行动失败.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">行动失败</div>
+        没用的人都赶快撤退！</br>
+        这里我来。</br>
+        役立たず共は引っ込んでろ！</br>
+        ここは私がやる。</br>
+        If you can't help, just run! </br>
+        I'll handle this.
+    </div>
+  </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/进驻设施.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">进驻设施</div>
+      还算是干净的房间。</br>
+      まぁまぁきれいな部屋かな。</br>
+      This room is clean enough, I guess.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/戳一下.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">戳一下</div>
+      我知道自己走。</br>
+      自分で歩けるから。</br>
+      I can find my own way.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/信赖触摸.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">信赖触摸</div>
+        安静。</br>
+        静かにして。</br>
+        Quiet, please.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/标题.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">标题</div>
+      明日方舟。</br>
+      アークナイツ。</br>
+      Arknights.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/新年祝福.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">新年祝福</div>
+      这个日子总是让我有些烦躁，时间年复一年地过去，我离过去的记忆越来越远......</br>
+      哼，不想这些了。</br>
+      喂，陪我去甲板上走走吧。</br>
+      吹吹冷风，或许可以让我冷静下来。</br>
+      この日になると、いつもイライラする。</br>
+      また一年が過ぎて、失くした記憶もどんどん手の届かないものになっていく……</br>
+      ふん、もう考えるのはやめだ。</br>
+      ねえ、甲板を散歩するからちょっと付き合って。</br>
+      冷たい風に当たってみれば、頭も冷やせるかもしれない。</br>
+      This day has always irritated me a little.
+      Time goes by one year after another, and my memories also drift further and further away...</br>
+      Hmph, forget it.</br>
+      Hey you, come take a stroll with me on the deck.</br>
+      Maybe some cold wind will help calm me down.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/问候.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">问候</div>
+      啊，你在这里。</br>
+      ああ、ここにいたか。</br>
+      Oh, here you are.
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/生日.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">生日</div>
+      生日快乐。</br>
+      作为失忆的人居然还记得自己的生日，说明这个日子一定发生过很重要的事吧......</br>
+      嗯，我记住你的生日了，这次绝不会忘的。
+    </div>
+  </div>
+  <div class="item">
+    <div class="right floated content">
+      <audio id="audioPlayer" src="{{ url_for('static', filename='media/周年庆典.wav') }}"></audio>
+      <div class="ui icon buttons">
+        <button class="ui button" onclick="playAudio()"><i class="play icon"></i></button>
+        <button class="ui button" onclick="pauseAudio()"><i class="pause icon"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">周年庆典</div>
+      我暂时还没有办法找回过去的自己，但是找寻的过程也塑造了现在的自己。</br>
+      在罗德岛待过的这些日子，也是其中重要的一部分。</br>
+      博士，接下来我们还有很长一段时间要共处，尽管相信我的剑吧。</br>
+      今はまだ昔の自分を確実に取り戻す方法はないけど、それを探す過程は今の私を作り上げた。</br>
+      ロドスで過ごした日々も、その中の大事な一部だ。</br>
+      ドクター、これからも長い間一緒にいることになる。</br>
+      私の剣を頼っていいよ。</br>
+      For now, I still don't have a way to find my past self, but the process has also shaped who I am today.</br>
+      My days here at Rhodes Island are an important part of that.</br>
+      Doctor, we still have a lot of time together ahead of us.</br>
+      Keep your faith in my sword.
+    </div>
+  </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Home Page</h4>
+          <div class="ui inverted link list">
+            <a href="127.0.0.1" class="item">Surtr</a>
+            <a href="origin.html" class="item">Origin</a>
+            <a href="end.html" class="item">Endfield</a>
+            <a href="login.html" class="item">Log in</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Other Pages</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="story">Story</a>
+            <a class="item" href="combat">Combat</a>
+            <a class="item" href="chat">Chat</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Tech Supports</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+            <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+            <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+            <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Contact Me</h4>
+          <p>Here's some ways:</br>
+            Email:almondsugar@foxmail.com</br>
+            QQ: 2228714163</br>
+            Wechat: Almondsugar_Shawn</br>
+          </p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <img src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+        <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+        <a href="https://www.skland.com/" class="item">Skland</a>
+        <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+      </div>
+    </div>
+</div>
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+
+  <script>
+        $('.menu .item').tab();
+
+
+        // 音频控制函数
+        function playAudio() {
+            const audio = document.getElementById('audioPlayer');
+            audio.play();
+        }
+
+        function pauseAudio() {
+            const audio = document.getElementById('audioPlayer');
+            audio.pause();
+        }
+
+        // 视频控制函数
+        function playVideo() {
+            const video = document.getElementById('videoPlayer');
+            video.play();
+        }
+
+        function pauseVideo() {
+            const video = document.getElementById('videoPlayer');
+            video.pause();
+        }
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+
+  </script>
+
+
+</body>
+
+</html>

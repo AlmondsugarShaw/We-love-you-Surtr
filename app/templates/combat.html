@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.6.0/echarts.common.js"></script></script>
+    <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Combat - Surtr</title>
+
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+  </style>
+
+</head>
+<body>
+
+
+<script>
+    $('.menu .item').tab();
+</script>
+
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}">
+        Surtr
+      </a>
+      <a href="surtr.html" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Pages <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/">Home Page</a>
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="ui grid" style="margin: 20px auto; max-width: 1200px;">
+    <div class="ui vertical menu">
+      <a class="active teal item" data-tab="section1">
+        【基础面板】
+      </a>
+      <a class="item" data-tab="section2">
+        【干员天赋】
+      </a>
+      <a class="item" data-tab="section3">
+        【潜能提升】
+      </a>
+      <a class="item" data-tab="section4">
+        【干员技能】
+      </a>
+      <a class="item" data-tab="section5">
+        【干员模组】
+      </a>
+    </div>
+  <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+    <div class="ui active tab segment" data-tab="section1">
+        <h2 class="ui header">基础面板</h2>
+        <div id="radar" style="width: 600px;height:600px;"></div>
+        <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <script type="text/javascript">
+          var dom = document.getElementById('radar');
+          var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+          });
+          var app = {};
+          
+          var option;
+      
+          option = {
+        title: {
+          text: '初始满练雷达对比图'
+        },
+        legend: {
+          data: ['初始', '满练']
+        },
+        radar: {
+          // shape: 'circle',
+          indicator: [
+            { name: '生命上限', max: 6022 },
+            { name: '攻击', max: 1576 },
+            { name: '防御', max: 502 },
+            { name: '法术抗性', max: 20 },
+            { name: '部署费用', max: 26 }
+          ]
+        },
+        series: [
+          {
+            name: '初始 vs 满练',
+            type: 'radar',
+            data: [
+              {
+                value: [1330, 288, 186, 10, 19],
+                name: '初始'
+              },
+              {
+                value: [2916, 860, 414, 20, 21],
+                name: '满练'
+              }
+            ]
+          }
+        ]
+      };
+      
+          if (option && typeof option === 'object') {
+            myChart.setOption(option);
+          }
+      
+          window.addEventListener('resize', myChart.resize);
+        </script>
+    </div>
+    <div class="ui tab segment" data-tab="section2">
+        <h2 class="ui header">第一天赋：熔火</h2>
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>等级</th>
+                <th>效果</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="等级">精英1</td>
+                <td data-label="效果">无视攻击目标12法术抗性</td>
+              </tr>
+              <tr>
+                <td data-label="等级">精英2</td>
+                <td data-label="效果">无视攻击目标20法术抗性</td>
+              </tr>
+              <tr>
+                <td data-label="等级">精英2 X模组2级</td>
+                <td data-label="效果">无视攻击目标24法术抗性</td>
+              </tr>
+              <tr>
+                <td data-label="等级">精英2 X模组3级</td>
+                <td data-label="效果">无视攻击目标26法术抗性</td>
+              </tr>
+            </tbody>
+          </table>
+        <h2 class="ui header">第二天赋：余烬</h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>等级</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="等级">精英1</td>
+              <td data-label="效果">受到致命伤害时持续使生命值不低于1，4秒后强制退出战场</td>
+            </tr>
+            <tr>
+              <td data-label="等级">精英2</td>
+              <td data-label="效果">受到致命伤害时持续使生命值不低于1，8秒后强制退出战场</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            ※触发本天赋后，获得禁疗状态</br>
+            ※强制退出战场视为撤回干员，返还部分部署费用
+        </p>
+    </div>
+    <div class="ui tab segment" data-tab="section3">
+        <h2 class="ui header">潜能提升</h2>
+        <p>
+            潜能2：部署费用-1</br>
+            潜能3：第二天赋效果增强</br>
+            潜能4：攻击力+28</br>
+            潜能5：第一天赋效果增强</br>
+            潜能6：部署费用-1
+        </p>
+    </div>
+    <div class="ui tab segment" data-tab="section4">
+        <h2 class="ui header">
+          <img class="logo" src="{{ url_for('static', filename='images/skill1.png') }}">
+          技能1：烈焰魔剑
+        </h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>等级</th>
+              <th>描述</th>
+              <th>初始</th>
+              <th>消耗</th>
+              <th>持续</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="等级">1</td>
+              <td data-label="描述">
+                下次攻击的攻击力提升至200%</br>
+                如果将目标击倒则立即恢复所有技力
+              </td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">4</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">2</td>
+              <td data-label="描述">
+                下次攻击的攻击力提升至205%</br>
+                如果将目标击倒则立即恢复所有技力
+              </td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">4</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">3</td>
+              <td data-label="描述">
+                下次攻击的攻击力提升至210%</br>
+                如果将目标击倒则立即恢复所有技力
+              </td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">4</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">4</td>
+              <td data-label="描述">下次攻击的攻击力提升至220%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">5</td>
+              <td data-label="描述">下次攻击的攻击力提升至225%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">6</td>
+              <td data-label="描述">下次攻击的攻击力提升至230%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">7</td>
+              <td data-label="描述">下次攻击的攻击力提升至240%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅰ</td>
+              <td data-label="描述">下次攻击的攻击力提升至260%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅱ</td>
+              <td data-label="描述">下次攻击的攻击力提升至280%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">3</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅲ</td>
+              <td data-label="描述">下次攻击的攻击力提升至310%</br>如果将目标击倒则立即恢复所有技力</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">2</td>
+              <td data-label="持续"> </td>
+            </tr>
+            </tbody>
+        </table>
+        <h2 class="ui header">
+          <img class="avatar" src="{{ url_for('static', filename='images/skill2.png') }}">
+          技能2：熔核巨影（精英一开放）
+        </h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>等级</th>
+              <th>描述</th>
+              <th>初始</th>
+              <th>消耗</th>
+              <th>持续</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="等级">1</td>
+              <td data-label="描述">攻击力+50%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">7</td>
+              <td data-label="消耗">28</td>
+              <td data-label="持续">15</td>
+            </tr>
+            <tr>
+              <td data-label="等级">2</td>
+              <td data-label="描述">攻击力+55%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">7</td>
+              <td data-label="消耗">27</td>
+              <td data-label="持续">15</td>
+            </tr>
+            <tr>
+              <td data-label="等级">3</td>
+              <td data-label="描述">攻击力+60%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">7</td>
+              <td data-label="消耗">26</td>
+              <td data-label="持续">15</td>
+            </tr>
+            <tr>
+              <td data-label="等级">4</td>
+              <td data-label="描述">攻击力+65%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">8</td>
+              <td data-label="消耗">25</td>
+              <td data-label="持续">16</td>
+            </tr>
+            <tr>
+              <td data-label="等级">5</td>
+              <td data-label="描述">攻击力+70%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">8</td>
+              <td data-label="消耗">24</td>
+              <td data-label="持续">16</td>
+            </tr>
+            <tr>
+              <td data-label="等级">6</td>
+              <td data-label="描述">攻击力+75%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至140%</td>
+              <td data-label="初始">8</td>
+              <td data-label="消耗">23</td>
+              <td data-label="持续">16</td>
+            </tr>
+            <tr>
+              <td data-label="等级">7</td>
+              <td data-label="描述">攻击力+80%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至150%</td>
+              <td data-label="初始">9</td>
+              <td data-label="消耗">22</td>
+              <td data-label="持续">17</td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅰ</td>
+              <td data-label="描述">攻击力+90%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至150%</td>
+              <td data-label="初始">10</td>
+              <td data-label="消耗">21</td>
+              <td data-label="持续">17</td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅱ</td>
+              <td data-label="描述">攻击力+100%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至150%</td>
+              <td data-label="初始">11</td>
+              <td data-label="消耗">20</td>
+              <td data-label="持续">17</td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅲ</td>
+              <td data-label="描述">攻击力+120%，攻击距离+1，攻击目标数+1</br>仅攻击到一个敌人时对其攻击力提升至160%</td>
+              <td data-label="初始">12</td>
+              <td data-label="消耗">18</td>
+              <td data-label="持续">18</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2 class="ui header">
+          <img class="logo" src="{{ url_for('static', filename='images/skill3.png') }}">
+          技能3：黄昏（精英二开放）
+        </h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>等级</th>
+              <th>描述</th>
+              <th>初始</th>
+              <th>消耗</th>
+              <th>持续</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="等级">1</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+180%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">10</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">2</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+190%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">10</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">3</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+200%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">10</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">4</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+210%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">9</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">5</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+220%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">9</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">6</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+230%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">9</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">7</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+240%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">8</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅰ</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+270%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">7</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅱ</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+300%，攻击距离+2，攻击目标数+2</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">6</td>
+              <td data-label="持续"> </td>
+            </tr>
+            <tr>
+              <td data-label="等级">Rank Ⅲ</td>
+              <td data-label="描述">
+                立即恢复所有生命</br>
+                攻击力+330%，攻击距离+2，攻击目标数+3</br>
+                生命上限+5000</br>
+                逐渐失去生命（60秒后到达最大生命20%/秒）</br>
+                持续时间无限</td>
+              <td data-label="初始">0</td>
+              <td data-label="消耗">5</td>
+              <td data-label="持续"> </td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+          ※技能存在0.6s开启动画，治疗自身当前最大生命值100%的生命值，该治疗行为无视禁疗</br>
+          ※损失生命效果每0.2s结算一次，从0开始呈线性递增至最大值。损失生命效果为生命流失
+        </p>
+        <h2 class="ui header">后勤技能</h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>条件</th>
+              <th>图标</th>
+              <th>技能</th>
+              <th>房间</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="条件">精英0</td>
+              <td data-label="图标">
+                <img class="logo" src="{{ url_for('static', filename='images/train1.png') }}">
+              </td>
+              <td data-label="技能">近卫专精·α</td>
+              <td data-label="房间">训练室</td>
+              <td data-label="描述">进驻训练室协助位时</br>近卫干员的专精技能训练速度+30%</td>
+            </tr>
+            <tr>
+              <td data-label="等级">精英2</td>
+              <td data-label="图标">
+                <img class="logo" src="{{ url_for('static', filename='images/train3.png') }}">
+              </td>
+              <td data-label="技能">剑术记忆</td>
+              <td data-label="房间">训练室</td>
+              <td data-label="描述">进驻训练室协助位时</br>近卫干员的专精技能训练速度+60%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ui tab segment" data-tab="section5">
+        <h2 class="ui header">
+          <img class="logo" src="{{ url_for('static', filename='images/AFT-X.png') }}" style="background-color: black;">
+          X模组：萨米的不灭心脏碎片
+        </h2>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>等级</th>
+              <th>效果</th>
+              <th>追加</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="等级">
+                <img class="logo" src="{{ url_for('static', filename='images/stage1.png') }}">
+              </td>
+              <td data-label="效果">
+                攻击 +30</br>
+                法术抗性 +5
+              </td>
+              <td data-label="追加">特性：未阻挡敌人时攻击速度+8</td>
+            </tr>
+            <tr>
+              <td data-label="等级">
+                <img class="logo" src="{{ url_for('static', filename='images/stage2.png') }}">
+              </td>
+              <td data-label="效果">
+                攻击 +48</br>
+                法术抗性 +5
+              </td>
+              <td data-label="追加">天赋【熔火】更新：无视攻击目标24法术抗性</td>
+            </tr>
+            <tr>
+              <td data-label="等级">
+                <img class="logo" src="{{ url_for('static', filename='images/stage3.png') }}">
+              </td>
+              <td data-label="效果">
+                攻击 +60</br>
+                法术抗性 +5
+              </td>
+              <td data-label="追加">天赋【熔火】更新：无视攻击目标26法术抗性</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+            模组解锁任务：</br>
+            ①完成5次战斗；必须编入非助战史尔特尔并上场，且每次战斗至少释放1次黄昏</br>
+            ②3星通关主题曲3-8；必须编入非助战史尔特尔并上场，且使用史尔特尔歼灭碎骨
+        </p>
+    </div>
+  </div> 
+</div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Home Page</h4>
+          <div class="ui inverted link list">
+            <a href="127.0.0.1" class="item">Surtr</a>
+            <a href="origin.html" class="item">Origin</a>
+            <a href="end.html" class="item">Endfield</a>
+            <a href="login.html" class="item">Log in</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Other Pages</h4>
+          <div class="ui inverted link list">
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Tech Supports</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+            <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+            <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+            <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+            <a href="https://echarts.apache.org/" class="item">Apache Echarts</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Contact Me</h4>
+          <p>Here's some ways:</br>
+            Email:almondsugar@foxmail.com</br>
+            QQ: 2228714163</br>
+            Wechat: Almondsugar_Shawn</br>
+          </p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <img src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+        <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+        <a href="https://www.skland.com/" class="item">Skland</a>
+        <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+      </div>
+    </div>
+  </div>
+
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+
+
+  <script>
+        $('.menu .item').tab();
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+  </script>
+
+
+</body>
+
+</html>

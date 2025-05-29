@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  
+    <!-- Site Properties -->
+    <title>Chat - Surtr</title>
+  
+     
+    <style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
+    .ui.menu .item img.logo {
+      margin-right: 1.5em;
+    }
+    .main.container {
+      margin-top: 7em;
+    }
+    .wireframe {
+      margin-top: 2em;
+    }
+    .ui.footer.segment {
+      margin: 5em 0em 0em;
+      padding: 5em 0em;
+    }
+    #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+    </style>
+  
+</head>
+
+
+
+<body>
+    <body style="padding-top:10%;background-color:antiquewhite;"></body>
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}">
+        Surtr
+      </a>
+      <a href="surtr.html" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Pages <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/">Home Page</a>
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui raised very padded text container segment">
+    <h2 class="ui header">Surtr</h2>
+    <div class="ui container">
+        <div class="ui white message">
+            <div class="comment">
+              <a class="avatar">
+                <img src="{{ url_for('static', filename='images/surtravatar.png') }}">
+              </a>
+              <div class="content">
+                <a class="author">Surtr</a>
+                <div class="metadata">
+                  <span class="date"></span>
+                </div>
+                <div class="text">
+                  我是史尔特尔，你就是他们说的博士吗？
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+      <div class="ui centered fluid action input" >
+        <input id="prompt" type="text" placeholder="Please enter your message here">
+          <button id="send" class="ui right labeled icon button">
+            <i class="right arrow icon"></i>
+              Send
+          </button>
+      </div>
+  </div>
+
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+      <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">Home Page</h4>
+              <div class="ui inverted link list">
+                <a href="127.0.0.1" class="item">Surtr</a>
+                <a href="origin.html" class="item">Origin</a>
+                <a href="end.html" class="item">Endfield</a>
+                <a href="login.html" class="item">Log in</a>
+              </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Other Pages</h4>
+              <div class="ui inverted link list">
+                <a class="item" href="story">Story</a>
+                <a class="item" href="combat">Combat</a>
+                <a class="item" href="chat">Chat</a>
+              </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Tech Supports</h4>
+              <div class="ui inverted link list">
+                <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+                <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+                <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+                <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+                <a href="https://echarts.apache.org/" class="item">Apache Echarts</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+              <h4 class="ui inverted header">Contact Me</h4>
+              <p>Here's some ways:</br>
+                Email:almondsugar@foxmail.com</br>
+                QQ: 2228714163</br>
+                Wechat: Almondsugar_Shawn</br>
+              </p>
+            </div>
+          </div>
+          <div class="ui inverted section divider"></div>
+          <img src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}" class="ui centered mini image">
+          <div class="ui horizontal inverted small divided link list">
+            <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+            <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+            <a href="https://www.skland.com/" class="item">Skland</a>
+            <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+          </div>
+        </div>
+      </div>
+
+  <script>
+$('.ui.dropdown').dropdown();
+
+$("#send").click(async function() {
+    const $btn = $(this);
+    const prompt = $("#prompt").val().trim();
+    const role = $("#role").val();
+    
+    // 输入验证
+    if (!prompt) {
+        alert("请输入消息内容");
+        return;
+    }
+
+    try {
+        // 禁用按钮并显示加载状态
+        $btn.prop("disabled", true).addClass("loading");
+
+        // 添加用户消息（安全处理）
+        const userMsg = `
+                <div class="comment">
+                    <a class="avatar">
+                        <img src="{{ url_for('static', filename='images/docavatar.jpg') }}">
+                    </a>
+                    <div class="content">
+                        <a class="author">Doctor</a>
+                        <div class="metadata">
+                          <span class="date"></span>
+                        </div>
+                        <div class="text">${escapeHtml(prompt)}</div>
+                        <div class="actions">
+                          <a class="reply"></a>
+                        </div>
+                    </div>
+                </div>`;
+        $(".comment").last().append(userMsg);
+
+        // 发送请求
+        const response = await $.post("/ai", { prompt, role });
+
+        // 添加 AI 回复（安全处理）
+        const aiMsg = `
+                <div class="comment">
+                    <a class="avatar">
+                        <img src="{{ url_for('static', filename='images/surtravatar.png') }}">
+                    </a>
+                    <div class="content">
+                      <a class="author">Surtr</a>
+                        <div class="metadata">
+                          <span class="date"></span>
+                        </div>
+                        <div class="text">${escapeHtml(response)}</div>
+                        <div class="actions">
+                          <a class="reply"></a>
+                        </div>
+                    </div>
+                </div>`;
+        $(".comment").last().append(aiMsg);
+
+        // 清空输入框
+        $("#prompt").val("");
+    } catch (error) {
+        console.error("请求失败:", error);
+        $(".comment").append(`
+            <div class="ui red message">
+                <i class="close icon"></i>
+                消息发送失败，请稍后重试
+            </div>`);
+    } finally {
+        // 恢复按钮状态
+        $btn.prop("disabled", false).removeClass("loading");
+        // 自动滚动到底部
+        scrollToBottom();
+    }
+});
+
+// XSS 防护函数
+function escapeHtml(unsafe) {
+    return unsafe
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+// 滚动到底部
+function scrollToBottom() {
+    const container = $(".container")[0];
+    container.scrollTop = container.scrollHeight;
+}
+
+// 关闭按钮事件委托
+$(".comment").on("click", ".message .close", function() {
+    $(this).closest(".message").transition("fade");
+});
+
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+</script>
+
+</body>
+</html>

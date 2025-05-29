@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage - Surtr</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <style>
+    .bg-image {
+        width: 100%; /* 设置宽度为5000px */
+        height: auto;
+        background-size: cover; /* 或 contain */
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+</style>
+
+
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="item" href="/">Home Page</a>
+    <a class="item" href="story">Story</a>
+    <a class="item" href="combat">Combat</a>
+    <a class="item" href="chat">Chat</a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui button" href="login">Log in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="item" href="/">Home Page</a>
+  <a class="item" href="story">Story</a>
+  <a class="item" href="combat">Combat</a>
+  <a class="item" href="chat">Chat</a>
+  <a class="item" href="login">Login</a>
+</div>
+
+
+
+
+
+
+
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="/">Home Page</a>
+        <a class="item" href="story">Story</a>
+        <a class="item" href="combat">Combat</a>
+        <a class="item" href="chat">Chat</a>
+        <div class="right item">
+          <a class="ui inverted button" href="login">Log in</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!-- 一个比较好看的首页视图 -->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Almost-a-Surtr-WIKI
+      </h1>
+      <h2>It is all about Surtr in Arknights.</h2>
+      <a href="login">
+        <div class="ui huge primary button">
+          Get Started
+          <i class="right arrow icon" ></i>
+        </div>
+      </a>
+      <img src="{{ url_for('static', filename='images/surtr_2.png') }}" 
+      class="bg-image" margin="0" padding="0" alt="Surtr">
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- 友情入坑链接 -->
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">One thing a Surtr fan must see</h3>
+          <p>I'm not good at making fan works, so this is a link to fall in love with her.</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="{{ url_for('static', filename='images/surtr_1.png') }}" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button"
+          href="https://www.bilibili.com/video/BV1wp4y1W77P/?spm_id_from=333.337.search-card.all.click" >
+            Check It Out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 史尔特尔小姐天下第一！ -->
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>"The first generation of the Three Primary Color Phantom Gods"</h3>
+          <p>That is what they all say about you.</p>
+        </div>
+        <div class="column">
+          <h3>"Noble spell damage invalidates all defenses"</h3>
+          <p>
+            <img src="{{ url_for('static', filename='images/docavatar.jpg') }}" class="ui avatar image">
+             <b>Docter</b> 
+             The evil spirit of the Tower of Babel
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 其他链接 -->
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">The fire giants in Norse mythology</h3>
+      <p>This is the source of inspiration for her creation and the path she came from.</p>
+      <a class="ui large button" href="origin">Read More</a>
+      <h4 class="ui horizontal header divider">
+        <a href="#">This is a dividing line.</a>
+      </h4>
+      <h3 class="ui header">Did I Tell You About Her In Endfield?</h3>
+      <p>Yes, she also shines brightly in another game called Arknights:Endfield.</p>
+      <a class="ui large button" href="end">Interested</a>
+    </div>
+  </div>
+
+
+
+
+<!-- 页面底部栏 -->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+            <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+            <a href="https://www.skland.com/" class="item">Skland</a>
+            <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Tech Supports</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+            <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+            <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+            <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+            <a href="https://echarts.apache.org/" class="item">Apache Echarts</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Contact me</h4>
+          <p>Here's some ways:</br>
+              Email:almondsugar@foxmail.com</br>
+              QQ: 2228714163</br>
+              Wechat: Almondsugar_Shawn</br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+
+
+<script>
+$('.changing.example .demo.segment')
+  .visibility({
+    once       : false,
+    continuous : true,
+    onPassing  : function(calculations) {
+      var newColor = 'rgba(0, 0, 0, ' + calculations.percentagePassed +')';
+      $(this)
+        .css('background-color', newColor)
+      ;
+    }
+  })
+;
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+</script>
+</body>
+
+</html>

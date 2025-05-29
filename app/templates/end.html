@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Endfield - Surtr</title>
+
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+  </style>
+
+</head>
+<body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}">
+        Surtr
+      </a>
+      <a href="surtr.html" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Pages <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/">Home Page</a>
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui centered fluid main text container">
+    <h1 class="ui header">基本资料：</h1>
+    <p>
+        代    号：莱万汀、レーヴァテイン、레바테인</br>
+        性    别：女</br>
+        发    色：红发</br>
+        瞳    色：紫瞳</br>
+        种    族：萨卡兹</br>
+        萌    点：高飞车、刀剑、双角、短靴、巨乳、外套半脱、露肩装、连衣裙、火能力</br>
+        所属团体：罗德岛
+    </p>
+
+  
+
+
+  <div class="ui centered card" style="width: 100%; margin: 0 auto;">
+    <div class="content">
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+      <div class="header" style="width: 80%; margin: 0 auto;">Laevatain</div>
+      <div class="meta">
+        <span class="right floated time" style="width: 80%; margin: 0 auto;">2024.12.14</span>
+        <span class="category" style="width: 80%; margin: 0 auto;">Arknights: Endfield</span>
+      </div>
+      </div>
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">Picture</h2>
+        <img class="ui image" src="{{ url_for('static', filename='images/Laevatain.png') }}">
+      </div>
+      
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">角色介绍</h2>
+        <p>
+            莱万汀来自罗德岛制药公司，在该公司与终末地工业的框架协议范围内，以特种人员的身份为终末地工业提供服务。</br>
+            在华法琳的许可下，莱万汀曾多年独自在北方执行某项外勤任务，具有强大的独立作战能力。与此形成对照的是，她在终末地工业的测试中表现出了过人的团队适应力和出色的沟通能力。</br>
+            这也体现在对她的评价上。与莱万汀共事过的终末地干员大都对她赞誉有加，称她虽然给人留下的第一印象通常都是“火焰般的女孩”，但却一点也不急躁，反而是个优秀的倾听者和协调者。</br>
+            只是，她有时候会说一些难懂的话，比如她经常提及一种“邪魔的威胁”，大多数人或者以为她所谈的是天使，或者并不能理解她究竟是在指什么。</br>
+            她经常身处严寒之中，却喜欢冰激凌。
+        </p>
+      </div>
+
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">角色相关</h2>
+        <p>
+            《明日方舟》中史尔特尔的对应角色，名字取自史尔特尔的佩剑莱万汀，同时也是史尔特尔的原型，北欧神话中火焰巨人史尔特尔/苏尔特（Surtr）的火焰之剑莱瓦汀（Laevatain）。</br>
+            相比史尔特尔，莱万汀的武器和性格设定略微有不同，常态下以一把长剑作战，大招则是改用与史尔特尔的莱万汀相似的长刀进行攻击。</br>
+            第一位在《终末地》中提及邪魔的角色。
+        </p>
+      </div>
+
+
+
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">技能</h2>
+        <p>
+            普通攻击：烈焰魔剑。对敌人进行至多5段斩击，造成灼热伤害。作为主控干员时，重击还会附带27点失衡。</br>
+            下落攻击： 处于空中时使用普攻，会下落并攻击附近敌人，造成灼热伤害。</br>
+            闪避追击： 闪避后立刻使用普攻，会追击敌人，造成灼热伤害。</br>
+            处决攻击： 附近有失衡敌人时使用普攻，将处决该敌人，造成大量灼热伤害并回复一定技力。</br>
+            战技：爆燃之刃。技力消耗 100</br>
+            连携技：焚灭之棘。冷却时间 30秒</br>
+            终结技：黄昏之环。所需终结能量 130</br>
+        </p>
+      </div>
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">天赋</h2>
+        <p>
+            融甲：造成伤害时无视敌人10%灼热抗性。</br>
+            爆裂升腾：每次自身造成灼热爆发后，灼热爆发的伤害都会增加10%，持续10秒。（最多叠加5层）
+        </p>
+      </div>
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">潜能</h2>
+        <p>
+            熔火(潜能1阶段解锁)：融甲效果增强，额外无视8%灼热抗性</br>
+            多味冰淇淋(潜能2阶段解锁)：释放终结技所需的终极能量降低10%</br>
+            邪魔剪除人(潜能3阶段解锁)：暴击率增加5%,智识增加20点</br>
+            再旅与归途(潜能4阶段解锁)：爆裂升腾效果增强:每层效果再增加8%</br>
+            日落(潜能5阶段解锁)：下次处决伤害增加50%（每20秒触发一次）
+        </p>
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="extra content">
+      <div class="right floated author">
+        <img class="ui avatar image" src="{{ url_for('static', filename='images/endfield.png') }}"> Arknights: Endfield
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Home Page</h4>
+          <div class="ui inverted link list">
+            <a href="127.0.0.1" class="item">Surtr</a>
+            <a href="origin.html" class="item">Origin</a>
+            <a href="end.html" class="item">Endfield</a>
+            <a href="login.html" class="item">Log in</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Other Pages</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="story">Story</a>
+            <a class="item" href="combat">Combat</a>
+            <a class="item" href="chat">Chat</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Tech Supports</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+            <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+            <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+            <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+            <a href="https://echarts.apache.org/" class="item">Apache Echarts</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Contact Me</h4>
+          <p>Here's some ways:</br>
+            Email:almondsugar@foxmail.com</br>
+            QQ: 2228714163</br>
+            Wechat: Almondsugar_Shawn</br>
+          </p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <img src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+        <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+        <a href="https://www.skland.com/" class="item">Skland</a>
+        <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+      </div>
+    </div>
+  </div>
+
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+
+
+<script>
+  function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+</script>
+
+</body>
+
+</html>

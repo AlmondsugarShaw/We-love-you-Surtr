@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+    <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Origin - Surtr</title>
+
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  #backToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  display: none; 
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.8);
+  }
+}
+#backToTop .icon {
+  font-size: 1.5em !important;
+}
+  </style>
+
+</head>
+<body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}">
+        Surtr
+      </a>
+      <a href="surtr.html" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Pages <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/">Home Page</a>
+          <a class="item" href="story">Story</a>
+          <a class="item" href="combat">Combat</a>
+          <a class="item" href="chat">Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui centered fluid main text container">
+    <h1 class="ui header">The Origin Of Surtr</h1>
+    <p>
+        中 文 名: 苏尔特尔</br>
+        外 文 名: Surtr、Surt</br>
+        别    名: 史尔特尔、苏尔特、苏鲁特</br>
+        神话体系: 北欧神话</br>
+        居    所: 穆斯贝尔海姆</br>
+        武    器: 炎之魔剑</br>
+        配    偶: 辛玛拉（Sinmara）</br>
+        所属神袛: 火巨人
+    </p>
+
+  
+
+
+  <div class="ui centered card" style="width: 100%; margin: 0 auto;">
+    <div class="content">
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+      <div class="header" style="width: 80%; margin: 0 auto;">Flame Giant</div>
+      <div class="meta">
+        <span class="right floated time" style="width: 80%; margin: 0 auto;">2018</span>
+        <span class="category" style="width: 80%; margin: 0 auto;">Norse Mythology</span>
+      </div>
+      <div class="description">
+        <p>
+            苏尔特尔（Surtr；古挪威语的“黝黑”），又名史尔特尔、苏尔特、苏鲁特等，是北欧神话中的火巨人，穆斯贝尔海姆的守护者。</br>
+            自古以来，他一直手持光芒之剑，站在穆斯贝尔海姆的边界守护着这个国度。</br>
+            直到诸神的黄昏到来时，他将会攻入阿斯加德与诸神开战，并在诸神的黄昏的最后毁灭世界。</br>
+        </p>
+      </div>
+      </div>
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">Picture</h2>
+        <img class="ui image" src="{{ url_for('static', filename='images/northernsurtr.png') }}">
+      </div>
+      
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">Introduction</h2>
+        <p>
+            《散文埃达》和《诗体埃达》中均有关于他的记载。在《诗体埃达》中描述了他在诸神黄昏中向诸神宣战的事情，除此之外便没有任何关于他的记载了。而《散文埃达》中除了进一步描写了他在诸神黄昏中的作为以外，还在描述巨人之祖尤弥尔之前，在描述火之国穆斯贝尔海姆的段落里提及了他手持利剑守护此地，静待诸神黄昏降临去毁灭世界的事迹。导致有部分人认为他是和尤弥尔一样古老的巨人，甚至比尤弥尔还早。但实际上对于他是什么时候又是如何诞生的，甚至是火巨人这个种族的来源，两部《埃达》中都没有明确说明。
+        </p>
+        <p>
+            （纠正：由于国内的现代北欧神话读物《北欧神话ABC》里描述：“苏尔特尔曾用其利剑砍击金伦加鸿沟的冰山，使冰山受热融化导致了巨人尤弥尔的诞生。 ”该情节在网络上广泛流传，导致很多人都以为是苏尔特尔创造了尤弥尔。但实际上，这一情节其实是该书作者茅盾的个人原创内容，并不是原神话的内容，在原神话中不存在这种说法。《诗体埃达》中并没有记载苏尔特尔在诸神创世前就已经存在，仅在诸神黄昏中提及了苏尔特尔。而《散文埃达》在诸神黄昏之前描述苏尔特尔的内容也只有：“他手持燃烧之剑站在穆斯贝尔海姆边界守护此地，并会在诸神的黄昏之际烧毁世界。”仅此而已，根本从来没有描述过他有砍击冰山这样的行为。而根据《散文埃达》的描述，使金伦加鸿沟中冰山融化的是穆斯贝尔海姆这个世界本身所散发出来的热力，所以冰山融化是一种自发的自然现象，不需要有人去刻意制造。尤弥尔的诞生是尼福尔海姆和穆斯贝尔海姆这两个世界自身的接触导致的，和苏尔特尔并没有关系。而对于苏尔特尔究竟诞生在尤弥尔之前还是之后，两部《埃达》中同样没有明确描述，任何关于苏尔特尔诞生在尤弥尔之前的说法都只是现代人的自我理解。）
+        </p>
+        <p>
+            他是诸神的黄昏中的重要角色，是在诸神的黄昏的最后毁灭世界的巨人。据《散文埃达》所说，他自从诞生以来，便一直手持自己的利剑守护着火之国穆斯贝尔海姆从未离开过，也不曾介入过外界各个种族的纠纷，直到诸神的黄昏到来之际，他率领火巨人的军队和霜巨人们一起向诸神开战，在所有诸神的敌人中他是第一个攻入阿斯加德的。当他所率领的火巨人军队通过彩虹桥时，这座桥便会被他们所骑乘的烈焰战马所踏碎。在诸神的黄昏一役中他与手持一柄鹿角作为武器的弗雷展开战斗，并杀死了弗雷，但他自己也被弗雷重创，在其他神和巨人都战死之后，他把火焰之剑投向天空，剑产生了巨大的火焰吞没了阿斯加德，点燃了世界之树，也点燃了整个大地，之后对于他的行踪便没有记载。另外，神话中还经常将一位名为“辛玛拉”的女巨人与他相提并论，现一般认为两者为配偶关系。
+        </p>
+        <p>
+            苏尔特尔可能是维京人对于火山爆发的印象的具象化。冰岛是一个多火山的地区，火山爆发在维京人看来是毁天灭地的灾难，因此在北欧神话中最后就由苏尔特尔来毁灭世界。但火山爆发后带来的温暖和养料又使动植物能够生长、文明得以复苏，对应诸神的黄昏之后的世界重获新生。
+        </p>
+      </div>
+
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">Weapon</h2>
+        <p>
+            苏尔特尔拥有一柄巨大的火焰之剑，能散发出比太阳更耀眼的光芒，苏尔特尔在诸神的黄昏之时用它灭世。这把剑被描述为“破灭之枝”（the scathe of branches） [1]，但名字经常被误解为“莱瓦汀（Lævateinn）”，并且被误认为与弗雷神的胜利之剑是同一个武器。但事实上，无论是《诗体埃达》或《散文埃达》都没有给出剑的名字，仅描述为一把灼热并且非常明亮的大剑，作为弗雷宝剑的说法也存在问题。此外，弗雷的胜利之剑在神话中也同样没有名字记录。
+        </p>
+        <p>
+            “Surtalogi”有时被认为是火剑的名字，但这个名词通常指的是烧毁世界的烈火，尽管烈火正是来自于火剑。“Surtalogi”其实是“苏尔特尔之炎”的意思，由“Surt”与“Logi”组成，其中“Logi”还是约顿海姆的巨人洛吉（不是火神洛基“Loki”）的名字，洛吉在神话是野火之化身，也就是火灾这种不可控制的火。
+        <p>
+            莱瓦汀（Lævateinn）在北欧神话中是存在的，不过与苏尔特尔所持的剑或弗雷的剑都无关，莱瓦汀是洛基在冥界之门面前打造并由苏尔特尔之妻辛玛拉（Sinmora）保管，词义来源于Lægjarn。（但仍然可以肯定莱瓦汀不是苏尔特尔的剑，因为苏尔特尔在此之前就已经持有剑了），莱瓦汀可以杀死栖息在Mímameiðr之树的公鸡Víðópnir，这是《Fjölsvinnsmál》里的说法。
+        </p>
+      </div>
+
+
+
+
+      <div class="ui centered fluid raised very padded text container segment" style="width: 100%; margin: 0 auto;">
+        <h2 class="ui header">Related events</h2>
+        <p>
+            所谓Ragnarok——诸神的黄昏已经笼罩在阿斯加德了。驾驭着日车和月车的苏尔（Sol）、玛尼（Mani）的脸因恐怖而变得苍白了。战战兢兢地勉强将车驱过天空，时时回头看那追上来要吞吃他们的天狼。这些天狼越逼越近，不久就要咬到他们了。苏尔和玛尼不再有笑容了，因此地面上也变得枯索、寒冷，可怕的无尽的冬开始了。先是飞下漫天雪花。继之从北方刮来咬人的冷风，地面覆盖上了厚厚的冰。这个可怕的严冬持续了整整三季。然后不但不消退。却又延长了更坏的三季，这叫做芬布尔之冬（Fimbul winter，漫长之冬）。一切可爱的东西都已离开地面，人类为生存所迫，各种罪恶都在做了。
+        </p>
+        <p>
+            在约顿海姆（Jothuheim）黑暗的铁森林（Jarnvid）中。女巨人安格尔波达（洛基的情人）用杀人者和淫恶者的骨头喂养着芬里尔的凶种，斯库尔（Skoll，嫌忌）、哈提（Hati，憎恨）和玛纳加尔姆（Managarm，一头追逐月亮的狼或者说其等同于哈提）这三条狼。因为杀人和淫恶的罪人太多了，这三条食量可惊的狼被喂得更强壮。张开了血口，更凶猛地追赶着驾着日月之车的姐弟二人。
+        </p>
+        <p>
+            空前的奇祸迫在眉睫了。大地为之震栗。而被禁锢着的洛基、芬里尔、海拉（Hel）的地狱犬加姆（Garm）都振作精神，奋力挣扎，将他们身上的铁索弄得震天响，想要摆脱束缚，冲出来报仇了。强烈的地震袭来，震断了所有的锁链，洛基和芬里尔走出了囚禁他们的山洞，立誓要向给他们带来无尽痛苦的诸神复仇。毒龙尼德霍格（Nidhogg）已经咬穿了生命之树尤克特拉希尔（Yggdrasil）的根。使这棵巨树的所有枝叶都疼得颤抖起来。高栖于英灵殿（Valhalla瓦尔哈拉宫）顶的雄鸡法亚拉（Fjalar）高声报警。立刻，米德加尔特（Midgard）大地上的雄鸡古林肯比（Gullinkambi，金冠）和尼福尔海姆（Niflheim）中冥王海拉（Hel）的红黑两色鸟，都同声应和。
+        </p>
+        <p>
+            彩虹桥（Bifrost）的守护者海姆达尔（Heimdall）看见了所有这些不祥的事。听到了红雄鸡的锐叫，立刻拿起他的号角（加拉尔Giallar）吹出那等待已久的告警的尖音。随即全宇宙就都听得这角声了。角声刚起，阿斯加德的诸神和瓦尔哈拉宫中的恩赫里亚（Einheriar）们都从座中跳起。立即全身武装，勇敢地离开神宫，跳上他们奋鬣腾骧的坐骑，如潮水般从彩虹桥上冲过。直奔维格利德（Vigrid，暴战）旷野。这里就是命运之神预言已久的终末决战的战场。
+        </p>
+        <p>
+            同时在海洋中。那条盘绕大地的世界之蛇耶梦加得（Jormungandr）也发怒挣扎，激起前所未有的巨浪。不久，这凶恶的大蛇也游出水面来上陆，往维格利德(Vigrid)去了。巨大的死亡之船纳吉尔法此时终于建造完工，这艘船是用死者的指甲建造的，坚固无比，船上载满了死神海拉的亡灵军队，霜巨人赫列姆（Hrym）率领霜巨人的军队登上了这艘船，由洛基掌舵，开往阿斯加德。此时，黑暗的天空中裂开了一道巨大的裂缝，来自南方火之国穆斯贝尔海姆的火巨人军队从中涌出，加入了诸神敌人的行列。这些火巨人浑身燃烧着火焰，胯下骑着烈焰战马，不断喷射火焰焚烧世间的一切。率领这支火巨人军队的正是火之国的守护者苏尔特尔，他手中高举着自己的燃烧之剑，散发着比太阳还要明亮的光芒。火巨人的军队最先登上了彩虹桥，想直冲阿斯加德，可是他们燃烧的马蹄太沉重了。只听一声响彻宇宙的巨响，彩虹桥断了。
+        </p>
+        <p>
+            诸神知道他们的末日到了。而且他们的无准备无远见，使他们的处境不利：奥丁（Odin）只有一只眼。提尔（Tyr）只剩一只手。弗雷（Freyr）没有剑（他的胜利之剑已经给了史基尔尼尔Skirnir）只能拿一只鹿角作兵器。虽则如此，诸神却都很镇定，毫无惧色。奥丁抽空先到兀儿德之泉（Well of Urd）边看一看。只见诺伦三女神（Norn）坐在凋零的世界之树尤克特拉希尔（Yggdrasil）下。脸罩着薄纱，悄悄地没有一点声息。在她们旁边放着一张破碎的网。奥丁在看守智慧之泉的老巨人密米尔（Mimir）耳边说了几句话，就又赶回维格利德战场。两军的人都到齐了。在这一边是坚定的阿萨神族、华纳神族、还有恩赫里亚们。在另一边则是闹哄哄的一群：火焰巨人苏尔特尔、浑身燃烧的火巨人们、狰狞可怖的霜巨人们、海拉的亡灵大军、洛基和他的妖魔帮手，地狱犬加姆、巨狼芬里尔、以及巨蛇耶梦加得。这最后两只巨兽喷出的火烟和毒雾，弥漫了整个宇宙。
+        </p>
+        <p>
+            无数年的老仇一齐迸发；两方的人都出死力相拼。奥丁对上了芬里尔狼。索尔对着巨蛇耶梦加得。提尔和地狱犬加姆战成对手。弗雷对战苏尔特尔，海姆达尔对洛基战在一处。其余的神祗和恩赫里亚们也显示威武，与巨人和亡灵大军展开战斗。但是命运早已指定诸神必得失败；首先是奥丁被杀死了。由芬里尔狼所代表的恶的潮流，即使是奥丁也抵挡不住。芬里尔狼越斗越勇，身躯也越来越大。直到最后，它的血口上撑着天，下挫着地，将奥丁活吞了下去。没有一个神能抽身救奥丁。弗雷虽然勇武，但由于失去了武器胜利之剑，他只能拿着一柄鹿角作为武器，后来鹿角碎裂后被苏尔特尔用火剑刺死，但他也在临死前给予了苏尔特尔沉重一击。海姆达尔稍占上风，最后他一剑砍掉了洛基的头颅，但洛基的头却猛地跳起来砸碎了海姆达尔的胸口，双方同归于尽。提尔与地狱犬加姆也得到同样的结果。索尔和巨蛇耶梦加得恶战良久，终于一锤子砸碎了耶梦加得的头颅，可是巨蛇在临死前向索尔喷吐毒液，索尔也中毒而死。维达（Vidar）从战场的一角冲过去，要报父仇。古老的预言现在又要应验。维达准备了很久的厚靴子现在起了作用。他的独脚踏住芬里尔的下颚，两手用力抓住它的上颚，用力一扯，竟将这怪兽撕成了两半。
+        </p>
+        <p>
+            此时，其余的神祗们和恩赫里亚们，全都死伤将尽。诸神和巨人们大部分同归于尽，战场上只剩下火焰巨人苏尔特尔，此时他将自己的火剑投向天空，剑喷射出了巨大的火焰，点燃了阿斯加德，点燃了人类生活的土地，也点燃了世界之树尤克特拉希尔（Yggdrasil）。在熊熊火焰中，大地焦黑残破，慢慢地往沸滚的海水中沉下去。世界的末日到了，混沌的黑暗笼罩着宇宙。
+        </p>
+        <p>
+            但是，北欧人的想像并不就此结束。他们相信，苏尔特尔的大火虽然烧毁了世界，却也烧毁了一切的恶。此后，从“恶的废墟”上将会有新的善产生，世界将重生。幸免于大难的神——第二代诸神将再来重整神宫，永为世界的主宰。
+        </p>
+        <p>
+            于是，经过了不知多少时候，火焰渐渐熄灭，火烧的大地渐渐冷却，从海里浮起来。像洗了个澡一样清新；日光再度照临这苏醒的大地。苏尔的女儿苏娜（Sunna）继承母职，又驾起日车在天空中巡行。这第二个太阳没有第一个那样炎热，所以无须用盾隔离它的热度。这更温和的阳光使地面重又披上一层绿衣，花果再度繁荣茂盛。两个人类，女的叫Lifthrasir，男的叫Lif（注：实际上两部《埃达》没有明确他们的性别，有时他们被认为是相反的性别），从密米尔在树林中的藏身处中钻出来了。他们做了这醒来的大地的主人，再度传承人类生息。
+        </p>
+        <p>
+            一切代表着逐渐发展的自然力的神都在那场大灾难中死了。但是瓦利（Vali）和维达，这两位代表了自然力之不灭的神却没有死。现在回到了从前诸神游戏的场所，艾达华尔（Idavoll）平原。在那里，他们遇到了曼尼（Magni）与摩迪（Modi），已逝的雷神索尔（Thor）的儿子，“力量”与“勇敢”之人格化。他们还保存着父亲的武器——雷神之锤（Mjolnir姆乔尔尼尔）。
+        </p>
+        <p>
+            早先住在华纳海姆为质的海尼尔（Honir）回来了。而且从黑暗的冥土，那被万物所爱的巴德尔和盲眼的霍德尔归来了。这两兄弟已经和解了，过去的错误都被宽恕，光明和黑暗和谐地同住着。这一小群神踯躅于神宫的故址，突然看见最高的神宫津利（Gimli）还是巍然无恙。它那宛如日轮的金顶正反射着耀炫的光芒。于是就在这座宫殿里，诸神再建了第二代的阿斯加德。
+        </p>
+      </div>
+
+
+
+    </div>
+    <div class="extra content">
+      <div class="right floated author">
+        <img class="ui avatar image" src="{{ url_for('static', filename='images/nail.png') }}"> Nail Gaiman
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Home Page</h4>
+          <div class="ui inverted link list">
+            <a href="127.0.0.1" class="item">Surtr</a>
+            <a href="origin.html" class="item">Origin</a>
+            <a href="end.html" class="item">Endfield</a>
+            <a href="login.html" class="item">Log in</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Other Pages</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="story">Story</a>
+            <a class="item" href="combat">Combat</a>
+            <a class="item" href="chat">Chat</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Tech Supports</h4>
+          <div class="ui inverted link list">
+            <a href="https://semantic-ui.com/" class="item">Sementic UI</a>
+            <a href="https://www.bootcdn.cn/" class="item">Boot CDN</a>
+            <a href="https://code.visualstudio.com/" class="item">Visual Studio Code</a>
+            <a href="https://www.deepseek.com/" class="item">Deepseek AI</a>
+            <a href="https://echarts.apache.org/" class="item">Apache Echarts</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Contact Me</h4>
+          <p>Here's some ways:</br>
+            Email:almondsugar@foxmail.com</br>
+            QQ: 2228714163</br>
+            Wechat: Almondsugar_Shawn</br>
+          </p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <img src="{{ url_for('static', filename='images/rhodes_island.18d9416c.png') }}" class="ui centered mini image">
+      <div class="ui horizontal inverted small divided link list">
+        <a href="https://ak.hypergryph.com/" class="item">Arknights</a>
+        <a href="https://www.hypergryph.com/" class="item">Hypergryph</a>
+        <a href="https://www.skland.com/" class="item">Skland</a>
+        <a href="https://exa.hypergryph.com/" class="item">Ex Astris</a>
+      </div>
+    </div>
+  </div>
+
+
+
+<button class="ui icon button" id="backToTop" title="回到顶部">
+  <i class="arrow up icon"></i>
+</button>
+
+
+
+
+  <script>
+    function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 启用平滑滚动
+  });
+}
+
+// 显示/隐藏按钮
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTop');
+  // 当滚动超过 300px 时显示按钮
+  btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+});
+
+document.getElementById('backToTop').addEventListener('click', scrollToTop);
+  </Script>
+
+</body>
+
+</html>
