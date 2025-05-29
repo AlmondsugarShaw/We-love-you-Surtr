@@ -1,0 +1,64 @@
+/* static/css/styles.css */
+
+
+
+
+
+/* 这是一个首页图版式 */
+.firstpage-image {
+    width: 100%;  /* 100% 宽度 */
+    height: auto;  /* 保持宽高比 */
+    opacity: 0.7;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;  /* 添加过渡效果 */
+}
+
+.firstpage-image:hover {
+    opacity: 1;  /* 鼠标悬停时变为不透明 */
+}
+
+
+
+
+
+/* 这是图片版式 */
+.custom-image {
+    width: 300px;  /* 固定宽度 */
+    height: auto;  /* 保持宽高比 */
+    opacity: 0.7;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;  /* 添加过渡效果 */
+}
+
+.custom-image:hover {
+    opacity: 1;  /* 鼠标悬停时变为不透明 */
+}
+
+
+
+
+
+/* 这是一个首页背景图版式 */
+.bg-image {
+    width: 100%;  /* 100% 宽度 */
+    height: auto;  /* 保持宽高比 */
+    opacity: 0.7;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;  /* 添加过渡效果 */
+}
+
+.firstpage-image:hover {
+    opacity: 1;  /* 鼠标悬停时变为不透明 */
+}
+
+
+
